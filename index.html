@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodpeckers | Premium Cabinets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-dark: #5D2906;
+            --secondary: #D4A76A;
+            --light: #F5F1EB;
+            --dark: #2C1810;
+            --gray: #777;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(44, 24, 16, 0.7)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.3s forwards;
+        }
+
+        .hero-btns {
+            opacity: 0;
+            animation: fadeUp 1s ease 0.6s forwards;
+        }
+
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--light);
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            margin: 5px 10px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .product-dimensions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .dimension {
+            text-align: center;
+        }
+
+        .dimension span {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .dimension small {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        /* Cigar Section */
+        .cigar-section {
+            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9)), url('https://images.unsplash.com/photo-1611267254323-4db7b39c732c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cigar-section h2 {
+            color: white;
+        }
+
+        .cigar-section .section-title h2:after {
+            background-color: var(--secondary);
+        }
+
+        .cigar-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cigar-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: var(--transition);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+            
+            .product-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 200px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tree"></i>
+                <h1>Woodpeckers</h1>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cigar">Cigar Cabinets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Artisan Crafted Cabinets</h1>
+            <p>Woodpeckers combines traditional craftsmanship with modern design to create premium cabinets that transform your space. Each piece is meticulously crafted with attention to detail and quality materials.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn">View Products</a>
+                <a href="#contact" class="btn btn-secondary">Get Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Craftsmanship</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Woodworking">
+                </div>
+                <div class="about-text">
+                    <h3>Master Woodworkers Since 1995</h3>
+                    <p>Woodpeckers Cabinets has been creating custom cabinetry for over 25 years. Our passion for woodworking is evident in every piece we create, from kitchen cabinets to specialty cigar humidors.</p>
+                    <p>We use only the finest hardwoods and materials, combining traditional joinery techniques with modern precision tools to create pieces that are both beautiful and built to last.</p>
+                    <p>Our team of craftsmen takes pride in their work, ensuring that each cabinet is not just furniture, but a work of art that will enhance your home for generations.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchen Cabinets</button>
+                <button class="filter-btn" data-filter="bathroom">Bathroom Vanities</button>
+                <button class="filter-btn" data-filter="custom">Custom Work</button>
+            </div>
+            <div class="products-grid">
+                <!-- Product cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cigar Section -->
+    <section class="cigar-section" id="cigar">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cigar Cabinets & Humidors</h2>
+            </div>
+            <div class="cigar-content">
+                <p>Our specialty cigar cabinets are designed for the discerning collector. Each humidor is crafted with Spanish cedar interiors and precision humidity control systems to preserve your valuable collection.</p>
+                <p>We offer custom sizing and configurations, from small desktop humidors to walk-in cigar rooms. Our cabinets feature beautiful exterior finishes that complement any decor while providing optimal conditions for cigar storage.</p>
+                <a href="#contact" class="btn">Inquire About Cigar Cabinets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to transform your space with custom cabinetry? Contact us today for a consultation and quote.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Workshop</h4>
+                                <p>123 Woodcraft Lane, Artisan Village, AV 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@woodpeckerscabinets.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Woodpeckers</h3>
+                    <p>Creating exceptional cabinetry since 1995. We combine traditional craftsmanship with modern design to create pieces that stand the test of time.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#cigar">Cigar Cabinets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Kitchen Cabinets</a></li>
+                        <li><a href="#">Bathroom Vanities</a></li>
+                        <li><a href="#">Cigar Humidors</a></li>
+                        <li><a href="#">Built-in Furniture</a></li>
+                        <li><a href="#">Restoration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Woodpeckers Cabinets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                name: "Classic Oak Kitchen",
+                category: "kitchen",
+                description: "Traditional oak kitchen cabinets with hand-finished details.",
+                dimensions: ["1.5m", "0.8m", "0.6m"],
+                img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                id: 2,
+                name: "Modern Maple Bathroom",
+                category: "bathroom",
+                description: "Sleek maple bathroom vanity with soft-close drawers.",
+                dimensions: ["1.2m", "0.5m", "0.8m"],
+                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                id: 3,
+                name: "Walnut Cigar Humidor",
+                category: "custom",
+                description: "Premium walnut cigar cabinet with Spanish cedar interior.",
+                dimensions: ["1.8m", "0.6m", "0.4m"],
+                img: "https://images.unsplash.com/photo-1611267254323-4db7b39c732c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
+            },
+            {
+                id: 4,
+                name: "Rustic Cherry Kitchen",
+                category: "kitchen",
+                description: "Warm cherry kitchen cabinets with antique brass hardware.",
+                dimensions: ["2.0m", "0.9m", "0.6m"],
+                img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                id: 5,
+                name: "Floating Bathroom Vanity",
+                category: "bathroom",
+                description: "Contemporary floating vanity with quartz top.",
+                dimensions: ["1.5m", "0.5m", "0.8m"],
+                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                id: 6,
+                name: "Custom Display Cabinet",
+                category: "custom",
+                description: "Handcrafted display cabinet with glass doors and lighting.",
+                dimensions: ["1.2m", "0.4m", "2.0m"],
+                img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2158&q=80"
+            }
+        ];
+
+        // Render Products
+        const productsGrid = document.querySelector('.products-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderProducts(filter = 'all') {
+            productsGrid.innerHTML = '';
+            
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(product => product.category === filter);
+            
+            filteredProducts.forEach((product, index) => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', product.category);
+                
+                // Add animation delay
+                productCard.style.animationDelay = `${index * 0.1}s`;
+                
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${product.img}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-dimensions">
+                            <div class="dimension">
+                                <span>${product.dimensions[0]}</span>
+                                <small>Height</small>
+                            </div>
+                            <div class="dimension">
+                                <span>${product.dimensions[1]}</span>
+                                <small>Width</small>
+                            </div>
+                            <div class="dimension">
+                                <span>${product.dimensions[2]}</span>
+                                <small>Depth</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+                
+                // Add visible class after a delay for animation
+                setTimeout(() => {
+                    productCard.classList.add('visible');
+                }, 100);
+            });
+        }
+
+        // Filter Products
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter products
+                const filter = btn.getAttribute('data-filter');
+                renderProducts(filter);
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`Thank you ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if(window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '20px 0';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
